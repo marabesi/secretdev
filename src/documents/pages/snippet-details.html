@@ -1,0 +1,31 @@
+<div ng-controller="SnippetDetails">
+    <div class="row snippet-item">
+        <h4>{{snippet.createdDate | moment: 'fromNow'}}, {{snippet.codeLanguage}}</h4>
+        <pre>{{snippet.snippet}}</pre>
+        <p>#parabéns ({{snippet.status.parabens}})</p>
+        <p>#EsseÉprogrameiro ({{snippet.status.esseEprogrameiro}})</p>
+        <p>#sóSucesso ({{snippet.status.soSucesso}})</p>
+        <p>#ManjaDosParanaue ({{snippet.status.manjaDosParanaue}})</p>
+        <p>#trampoDePresidiario ({{snippet.status.trampoDePresidiario}})</p>
+    </div>
+    <div class="row snippet-comment">
+        <form name="snippetComment" ng-submit="addComment(snippetComment.$valid)" novalidate>
+            <div class="form-group">
+                <textarea ng-model="codeComment" ng-required="true" ng-minlength="3" class="form-control input-lg" rows="5" placeholder="Deixe um comentário"></textarea>
+            </div>
+            <div class="form-group">
+                <input name="codeName" ng-model="codeName" ng-required="true" ng-minlength="3" type="text" class="form-control input-lg" placeholder="Digite seu nome" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enviar !!111!" ng-disabled="snippetComment.$invalid" class="btn btn-lg btn-default">
+            </div>
+        </form>
+    </div>
+
+    <div id="snippet-container-comments">
+        <div class="row" ng-repeat="comment in snippet.comments | reverse">
+            <h3>{{comment.name}}, comentou :</h3>
+            <p>{{comment.comment}}</p>
+        </div>
+    </div>
+</div>
