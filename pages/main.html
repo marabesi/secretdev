@@ -1,0 +1,25 @@
+<div ng-controller="MainCtrl">
+    <h1 class="cover-heading">Sua equipe de desenvolvimento cria algoritmos com uma alta qualidade ?</h1>
+    <p class="lead">Seu colega de trabalho que desenvolve sem parar sempre segue boas práticas ?</p>
+    <p class="lead">Algoritmos de alto desempenho ?</p>
+    <p class="lead">
+        <a href="/#snippet.html" class="btn btn-lg btn-default">Envie um Snippet agora !11!!1</a>
+    </p>
+
+    <div id="snippet-container">
+        <h3 ng-show="snippetLoading">Carregando.. :)</h3>
+        <div class="row" ng-repeat="snippet in snippets | reverse">
+            <h4>
+            <a href="#/snippet-details.html/{{snippet.$id}}" class="snippet-details">
+               {{snippet.createdDate | moment: 'fromNow' }}, {{snippet.codeLanguage}}</a>
+               </h4>
+            <pre>{{snippet.snippet}}</pre>
+
+            <p>#parabéns ({{snippet.status.parabens}})</p>
+            <p>#EsseÉprogrameiro ({{snippet.status.esseEprogrameiro}})</p>
+            <p>#sóSucesso ({{snippet.status.soSucesso}})</p>
+            <p>#ManjaDosParanaue ({{snippet.status.manjaDosParanaue}})</p>
+            <p>#trampoDePresidiario ({{snippet.status.trampoDePresidiario}})</p>
+        </div>
+    </div>
+</div>
