@@ -1,5 +1,5 @@
 <div ng-controller="Snippet">
-    <form role="form" name="addSnippet" ng-submit="addSnippet(addSnippet.$valid)" novalidate>
+    <form role="form" name="addSnippet" ng-submit="sendSnippet(addSnippet.$valid)" novalidate>
         <div class="form-group">
             <textarea name="codeSnippet" ng-required="true" ng-minlength="5" ng-model="codeSnippet" class="form-control" rows="5" placeholder="swith(a) { case 'a': return true; break; case 'b': return false; break; }" required></textarea>
         </div>
