@@ -22,7 +22,7 @@ secretDev.controller('MainCtrl', function ($firebase, $scope) {
 });
 
 secretDev.controller('Snippet', function ($firebase, $scope, $location) {
-    $scope.addSnippet = function () {
+    $scope.sendSnippet = function () {
         var fireBaseSnippet = {
             snippet: $scope.codeSnippet,
             codeLanguage: $scope.codeLanguage,
