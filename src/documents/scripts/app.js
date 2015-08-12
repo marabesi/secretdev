@@ -40,6 +40,9 @@ secretDev.controller('Snippet', function ($firebase, $scope, $location) {
         var sync = $firebase(ref);
 
         sync.$push(fireBaseSnippet);
+
+        $scope.newSnippet = fireBaseSnippet;
+
         $location.path('/');
     };
 });
