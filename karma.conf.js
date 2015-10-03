@@ -18,7 +18,7 @@ module.exports = function(config) {
       'src/files/vendor/angular/angular.js',
       'src/files/vendor/angular-route/angular-route.js',
       'src/files/vendor/firebase/firebase.js',
-      'src/files/vendor/angularfire/angularfire.min.js',
+      'src/files/vendor/angularfire/dist/angularfire.min.js',
       'src/files/vendor/moment/moment.js',
       'src/files/vendor/angular-mocks/angular-mocks.js',
       'src/documents/scripts/app.js',

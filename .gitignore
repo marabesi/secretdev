@@ -2,3 +2,4 @@ node_modules/
 out/
 coverage/
 bower_components/
+src/files/vendor
