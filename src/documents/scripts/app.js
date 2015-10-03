@@ -8,13 +8,12 @@ var secretDev = angular.module('secretDev', [
     'firebase'
 ]);
 
-secretDev.controller('MainCtrl', function ($firebase, $scope) {
+secretDev.controller('MainCtrl', function ($firebaseArray, $scope) {
     $scope.snippetLoading = true;
 
     var ref = new Firebase(URL_FIREBASE);
-    var sync = $firebase(ref);
 
-    $scope.snippets = sync.$asArray();
+    $scope.snippets = $firebaseArray(ref);
 
     $scope.snippets.$loaded(function () {
         $scope.snippetLoading = false;
@@ -47,12 +46,11 @@ secretDev.controller('Snippet', function ($firebase, $scope, $location) {
     };
 });
 
-secretDev.controller('SnippetDetails', function ($scope, $routeParams, $firebase) {
+secretDev.controller('SnippetDetails', function ($scope, $routeParams, $firebaseObject) {
     var idSnippet = $routeParams.idSnippet;
     var ref = new Firebase(URL_FIREBASE + idSnippet);
-    var sync = $firebase(ref);
 
-    $scope.snippet = sync.$asObject();
+    $scope.snippet = $firebaseObject(ref);
 
     $scope.addComment = function (isValid) {
         if (isValid) {
