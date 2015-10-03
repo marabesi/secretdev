@@ -16,7 +16,7 @@
 		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-    <%- @getBlock("styles").add(["styles/twitter-bootstrap.css", "styles/style.css"]).toHTML() %>
+    <%- @getBlock("styles").add(["vendor/bootstrap-css/css/bootstrap.css", "styles/style.css"]).toHTML() %>
 </head>
 
 <body>
