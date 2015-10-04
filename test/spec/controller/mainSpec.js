@@ -19,8 +19,6 @@ describe('Controller: Main', function() {
 
   it("Should load data from firebase API successfully", function() {
     $firebase = function(ref) {
-      return {
-        $asArray : function() {
           var firebaseData = [
             {
               $id : 123,
@@ -42,12 +40,10 @@ describe('Controller: Main', function() {
           };
 
           return firebaseData;
-        },
-      }
     };
 
     controller = $controller('MainCtrl', {
-      $firebase : $firebase,
+      $firebaseArray : $firebase,
       $scope : $scope
     });
 

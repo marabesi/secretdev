@@ -10,21 +10,17 @@ describe('Controller: SnippetDetail', function() {
     $scope = _$rootScope_.$new();
     $routeParams = _$routeParams_;
     firebaseObj = {
-      $asObject : function() {
-        return {
-            $id : 999,
-            createdDate : '2013-09-23T22:11:09.812Z',
-            codeLanguage : 'CSS',
-            snippet : '#global { color:#000; }',
-            status : {
-              parabens : 0,
-              esseEprogrameiro: 0,
-              soSucesso: 0,
-              manjaDosParanaue: 0,
-              trampoDePresidiario: 0
-            },
-          };
-      }
+        $id : 999,
+        createdDate : '2013-09-23T22:11:09.812Z',
+        codeLanguage : 'CSS',
+        snippet : '#global { color:#000; }',
+        status : {
+          parabens : 0,
+          esseEprogrameiro: 0,
+          soSucesso: 0,
+          manjaDosParanaue: 0,
+          trampoDePresidiario: 0
+        }
     };
     firebase = function(ref) {
       ref.child = function(name) {
@@ -39,7 +35,7 @@ describe('Controller: SnippetDetail', function() {
     controler = $controller('SnippetDetails', {
       $scope : $scope,
       $routeParams : $routeParams,
-      $firebase : firebase
+      $firebaseObject : firebase
     });
   }));
 

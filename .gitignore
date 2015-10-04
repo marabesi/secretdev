@@ -3,3 +3,4 @@ out/
 coverage/
 bower_components/
 src/files/vendor
+/nbproject
