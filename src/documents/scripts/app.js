@@ -1,6 +1,6 @@
 'use strict';
 
-var URL_FIREBASE = "https://blazing-fire-3456.firebaseio.com/";
+var URL_FIREBASE = "https://secretdev.firebaseio.com/";
 
 var secretDev = angular.module('secretDev', [
     'secretDev.filters',
