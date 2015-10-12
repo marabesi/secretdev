@@ -1,11 +1,12 @@
 'use strict';
 
-var URL_FIREBASE = "https://secretdev.firebaseio.com/";
+var URL_FIREBASE = "https://blazing-fire-3456.firebaseio.com/";
 
 var secretDev = angular.module('secretDev', [
     'secretDev.filters',
     'secretDev.config',
-    'firebase'
+    'firebase',
+    'sdLike'
 ]);
 
 secretDev.controller('MainCtrl', function ($firebaseArray, $scope) {
@@ -20,7 +21,7 @@ secretDev.controller('MainCtrl', function ($firebaseArray, $scope) {
     });
 });
 
-secretDev.controller('Snippet', function ($firebase, $scope, $location) {
+secretDev.controller('Snippet', function ($scope, $location) {
     $scope.sendSnippet = function () {
         var fireBaseSnippet = {
             snippet: $scope.codeSnippet,
@@ -36,9 +37,8 @@ secretDev.controller('Snippet', function ($firebase, $scope, $location) {
         };
 
         var ref = new Firebase(URL_FIREBASE);
-        var sync = $firebase(ref);
 
-        sync.$push(fireBaseSnippet);
+        ref.push(fireBaseSnippet);
 
         $scope.newSnippet = fireBaseSnippet;
 

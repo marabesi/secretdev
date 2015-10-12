@@ -90,6 +90,9 @@ body {
     /* IE8 proofing */
     color: rgba(255, 255, 255, .5);
 }
+.sd-margin button {
+  margin: 5px;
+}
 @media (min-width: 768px) {
     .masthead {
         top: 0;
