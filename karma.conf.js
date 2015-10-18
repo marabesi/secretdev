@@ -21,10 +21,8 @@ module.exports = function(config) {
       'src/files/vendor/angularfire/dist/angularfire.min.js',
       'src/files/vendor/moment/moment.js',
       'src/files/vendor/angular-mocks/angular-mocks.js',
-      'src/documents/scripts/app.js',
-      'src/documents/scripts/config.js',
-      'src/documents/scripts/filters.js',
-      'test/**/*.js'
+      'src/documents/scripts/**/*.js',
+      'test/**/*Spec.js'
     ],
 
 

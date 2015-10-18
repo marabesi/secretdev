@@ -15,11 +15,13 @@
                </h4>
             <pre>{{snippet.snippet}}</pre>
 
-            <p>#parabéns ({{snippet.status.parabens}})</p>
-            <p>#EsseÉprogrameiro ({{snippet.status.esseEprogrameiro}})</p>
-            <p>#sóSucesso ({{snippet.status.soSucesso}})</p>
-            <p>#ManjaDosParanaue ({{snippet.status.manjaDosParanaue}})</p>
-            <p>#trampoDePresidiario ({{snippet.status.trampoDePresidiario}})</p>
+            <div ng-controller="LikeController" class="sd-margin">
+              <button ng-click="addLike(snippet.$id, 'esseEprogrameiro')" role="button" class="btn btn-default">#EsseÉprogrameiro ({{snippet.status.esseEprogrameiro}})</button>
+              <button ng-click="addLike(snippet.$id, 'parabens')" role="button" class="btn btn-default">#parabéns ({{snippet.status.parabens}})</button>
+              <button ng-click="addLike(snippet.$id, 'soSucesso')" role="button" class="btn btn-default">#sóSucesso ({{snippet.status.soSucesso}})</button>
+              <button ng-click="addLike(snippet.$id, 'manjaDosParanaue')" role="button" class="btn btn-default">#ManjaDosParanaue ({{snippet.status.manjaDosParanaue}})</button>
+              <button ng-click="addLike(snippet.$id, 'trampoDePresidiario')" role="button" class="btn btn-default">#trampoDePresidiario ({{snippet.status.trampoDePresidiario}})</button>
+            </div>
         </div>
     </div>
 </div>
